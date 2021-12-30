@@ -1,0 +1,140 @@
+/*
+font-family: 'PT Sans', sans-serif;
+font-family: 'Roboto Slab', serif;
+
+colorhunt:
+#1B262C
+#0F4C75
+#3282B8
+#BBE1FA
+*/
+
+body {
+  text-align: left;
+}
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.3rem;
+  line-height: 1.75;
+}
+
+h1,h2 {
+  font-family: 'Roboto Slab', serif;
+  padding: 10px 0;
+  text-align: left;
+}
+
+h5 {
+  color: #3282B8;
+}
+
+/* Nav Bar */
+.navbar {
+  background-color: #1B262C;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  font-family: 'Roboto Slab', serif;
+  color: #BBE1FA;
+}
+
+.bg-custom {
+  background-image: linear-gradient(15deg, #0F4C75 0%, #1B262C 100%);
+}
+
+/* Title Section */
+#title {
+  font-size: 1.5rem;
+  background-color: #BBE1FA;
+  padding: 7% 15%;
+  color: #1B262C;
+}
+
+.title-qualities {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  filter: invert(23%) sepia(41%) saturate(1553%) hue-rotate(170deg) brightness(92%) contrast(93%);
+  /* Hex code to filter command: https://codepen.io/sosuke/pen/Pjoqqp */
+  margin: 25px 0;
+}
+
+.icon:hover {
+  filter: invert(49%) sepia(62%) saturate(501%) hue-rotate(161deg) brightness(82%) contrast(95%);
+}
+
+.feature-box {
+  text-align: center;
+  padding: 5%;
+}
+
+.title-image {
+  max-width:500px;
+  max-height:500px;
+  border-radius: 20%;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+/* Presentation */
+#presentation {
+  padding: 7% 15%;
+  background-color: #3282B8;
+  color: #1B262C;
+}
+
+.pres-div {
+  text-align: left;
+}
+
+.presentation-subsection {
+  padding: 25px 0;
+}
+
+/* Projects */
+#projects {
+  padding: 7% 7%;
+  background-color: #1B262C;
+  color: #BBE1FA;
+}
+
+.project-subtitle {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.project-spacing {
+  padding: 25px 0;
+}
+
+
+/* Contact */
+#contact {
+  padding: 7% 15%;
+  background-color: #BBE1FA;
+  color: #1B262C;
+}
+
+.links {
+  color: #3282B8;
+}
+
+.links:hover {
+  color: #7F9C95;
+  text-decoration: none;
+}
+
+/* Footer */
+#footer {
+  padding: 5% 15%;
+  background-color: #1B262C;
+  color: #BBE1FA;
+}
