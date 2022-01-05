@@ -208,6 +208,10 @@ video {
   border-radius: 10%;
 }
 
+.white-bg {
+  mix-blend-mode: multiply;
+}
+
 /* Skills */
 #skills {
   padding: 7% 15%;

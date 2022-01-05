@@ -174,10 +174,13 @@
         <div class="col-md-5 pres-div">
           <h2>Polytechnique Montréal</h2>
           <p>I earned a bachelor's degree in mechanical engineering with a specialisation in mechatronics.</p>
-          <p>During my first three years, I was involved in the student group Oronos where we had to build a composite rocket for a competition at Spaceport America, New Mexico. I was in charge of systems integration, meaning that I had to make things fit together inside the small volume in the rocket.</p>
-          <p>During my last year, I was involved in the student group Elikos where we had to build an autonomous drone with a robotic arm for a competition at Alma, Chicoutimi. I was in charge of making a 3 DOF robotic arm that would be mounted on the drone.</p>
+          <p>During my first three years, I was involved in the student group Oronos where we had to build a composite rocket for a competition at Spaceport America, New Mexico. I was in charge of systems integration, meaning that I had to make
+            things fit together inside the small volume in the rocket.</p>
+          <p>During my last year, I was involved in the student group Elikos where we had to build an autonomous drone with a robotic arm for a competition at Alma, Chicoutimi. I was in charge of making a 3 DOF robotic arm that would be mounted on
+            the drone.</p>
           <p>I learned a lot about electronic circuits and with that experience, I started to design PCB's for a few of my school projects.</p>
-          <p>My great interest in programming and in electronics led me to work on my master's project with thesis on the development of an active carrier for the braiding of composite textiles. A patent process is underway and a publication is expected during summer 2022.</p>
+          <p>My great interest in programming and in electronics led me to work on my master's project with thesis on the development of an active carrier for the braiding of composite textiles. A patent process is underway and a publication is
+            expected during summer 2022.</p>
         </div>
         <div class="col-md-7">
           <div id="poly-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="8000">
@@ -250,13 +253,13 @@
       </ol>
       <div class="carousel-inner">
         <!-- First project -->
-        <div class="carousel-item active">
+        <div class="carousel-item">
           <div class="row">
             <div class="col-xl-4 col-lg-6">
               <img class="project-image" src="img/3axis-cnc-iso-1.png" alt="3axis-cnc-cad">
             </div>
             <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="3axis-cnc-video">
+              <video class="project-image" width="600px" autoplay loop muted alt="3axis-cnc-video">
                 <source src="vid/3axis-cnc-stab.mp4" type="video/mp4">
               </video>
             </div>
@@ -269,30 +272,57 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>The scope of this project was to get familiar with the Solidworks CAD software and to build a CNC router that would be usefull for any projects that would require the machining of plywood sheets or even aluminum sheets. I also wanted to acquire more knowledge on electronics for CNC machines.</p>
+                <p>The scope of this project was to get familiar with the Solidworks CAD software and to build a CNC router that would be usefull for any projects that would require the machining of plywood sheets or even aluminum sheets. I also
+                  wanted to acquire more knowledge on electronics for CNC machines.</p>
                 <p>This project was done in collaboration with two other engineering students who's focus was on the CAD. My role in the team was to make the electronics box, the electronics circuit and to program the CNC shield.</p>
-                <p>We used v-slot aluminum extrusions for the structure and for the linear guide and eccentric nuts on the carriage of all axis to tighten the grip on the extrusions. Aluminum sheetmetal was used to make most of the structure of the carriages and some more complex parts were 3D printed in PLA.</p>
-                <p>All the electronic components (such as the limit switches) were wired through a drag chain and then plugged in the electronics box. The electronics box has a 24v power supply for the stepper motors and for the CNC shield and it has a 220v 600W transformer for the spindle. An Arduino microcontroller runs the GRBL firmware and connects via USB to a computer to the machining program.</p>
+                <p>We used v-slot aluminum extrusions for the structure and for the linear guide and eccentric nuts on the carriage of all axis to tighten the grip on the extrusions. Aluminum sheetmetal was used to make most of the structure of the
+                  carriages and some more complex parts were 3D printed in PLA.</p>
+                <p>All the electronic components (such as the limit switches) were wired through a drag chain and then plugged in the electronics box. The electronics box has a 24v power supply for the stepper motors and for the CNC shield and it has
+                  a 220v 600W transformer for the spindle. An Arduino microcontroller runs the GRBL firmware and connects via USB to a computer to the machining program.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
                 <ul>
-                  <li><p>600W Spindle (max 15000 RPM)</p></li>
-                  <li><p>ER11 Collets with HSS End Mill</p></li>
-                  <li><p>GRBL Controller for the stepper motors (Arduino shield)</p></li>
-                  <li><p>Working volume: 100cm x 100cm x 20cm</p></li>
-                  <li><p>Control via USB, using an Universal G-Code Sender Software</p></li>
-                  <li><p>Emergency Stop Button and other Safety Features</p></li>
+                  <li>
+                    <p>600W Spindle (max 15000 RPM)</p>
+                  </li>
+                  <li>
+                    <p>ER11 Collets with HSS End Mill</p>
+                  </li>
+                  <li>
+                    <p>GRBL Controller for the stepper motors (Arduino shield)</p>
+                  </li>
+                  <li>
+                    <p>Working volume: 100cm x 100cm x 20cm</p>
+                  </li>
+                  <li>
+                    <p>Control via USB, using an Universal G-Code Sender Software</p>
+                  </li>
+                  <li>
+                    <p>Emergency Stop Button and other Safety Features</p>
+                  </li>
                 </ul>
 
                 <h4>Lessons learned</h4>
                 <ul>
-                  <li><p>Use Solidworks (part and assembly design)</p></li>
-                  <li><p>All the electronic wirings</p></li>
-                  <li><p>Integration of all the electronics</p></li>
-                  <li><p>How the GRBL controller firmware works</p></li>
-                  <li><p>Rubber v-wheels are not sturdy enough, and it causes vibrations when machining</p></li>
-                  <li><p>Cable management and connectors selection (wires tend to take a lot more space than expected)</p></li>
+                  <li>
+                    <p>Use Solidworks (part and assembly design)</p>
+                  </li>
+                  <li>
+                    <p>All the electronic wirings</p>
+                  </li>
+                  <li>
+                    <p>Integration of all the electronics</p>
+                  </li>
+                  <li>
+                    <p>How the GRBL controller firmware works</p>
+                  </li>
+                  <li>
+                    <p>Rubber v-wheels are not sturdy enough, and it causes vibrations when machining</p>
+                  </li>
+                  <li>
+                    <p>Cable management and connectors selection (wires tend to take a lot more space than expected)</p>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -319,31 +349,59 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>My implication in the student group Elikos during my bachelor's degree at Polytechnique ignited a spark of curiosity for drones. I also started to look at autonomous drones videos of people, and it was fascinating how easy it is to do. This motivated me to build a drone.</p>
+                <p>My implication in the student group Elikos during my bachelor's degree at Polytechnique ignited a spark of curiosity for drones. I also started to look at autonomous drones videos of people, and it was fascinating how easy it is to
+                  do. This motivated me to build a drone.</p>
                 <p>I used an DJI 550 frame on which I designed and 3D printed fixtures for the various components (such as the battery and gimbal fixtures). I soldered all the connectors on the frame and on the power distribution board.</p>
                 <p>The flight controller is a Pixhawk system and it's connected to a 6 channel radio controller that has a range up to 2km. The remote can also control the orientation of the gimbal mounted on the drone.</p>
-                <p>The Mission Planner software uses real-time telemetry to control the drone. A flight plan can be made with multiple setpoints that use GPS data and the altimeter readings. There are many ways to program the flight controller using Mission Planner, and it is even possible to plan topographic drone surveying. Then, in post-processing, it is possible to stitch the images to generate a map. I have yet to discover these amazing features.</p>
+                <p>The Mission Planner software uses real-time telemetry to control the drone. A flight plan can be made with multiple setpoints that use GPS data and the altimeter readings. There are many ways to program the flight controller using
+                  Mission Planner, and it is even possible to plan topographic drone surveying. Then, in post-processing, it is possible to stitch the images to generate a map. I have yet to discover these amazing features.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
                 <ul>
-                  <li><p>Pixhawk autopilot</p></li>
-                  <li><p>2 Axis Gimbal for a GoPro Camera</p></li>
-                  <li><p>5000mAh 4 Cells Li-Po battery</p></li>
-                  <li><p>Telemetry up to 2km</p></li>
-                  <li><p>High and wide landing gear for stability</p></li>
-                  <li><p>Mass of 2.5kg (with battery and camera)</p></li>
+                  <li>
+                    <p>Pixhawk autopilot</p>
+                  </li>
+                  <li>
+                    <p>2 Axis Gimbal for a GoPro Camera</p>
+                  </li>
+                  <li>
+                    <p>5000mAh 4 Cells Li-Po battery</p>
+                  </li>
+                  <li>
+                    <p>Telemetry up to 2km</p>
+                  </li>
+                  <li>
+                    <p>High and wide landing gear for stability</p>
+                  </li>
+                  <li>
+                    <p>Mass of 2.5kg (with battery and camera)</p>
+                  </li>
                 </ul>
 
                 <h4>Next Steps</h4>
                 <ul>
-                  <li><p>Get the Transport Canada pilot license</p></li>
-                  <li><p>Configure the remote controller</p></li>
-                  <li><p>Configure the autopilot for the Pixhawk</p></li>
-                  <li><p>Validate that all the features are working (altimeter, GPS, telemetry, etc.)</p></li>
-                  <li><p>Cable management</p></li>
-                  <li><p>Design and print a cover for the electronics</p></li>
-                  <li><p>Incorporate a radio camera for live view</p></li>
+                  <li>
+                    <p>Get the Transport Canada pilot license</p>
+                  </li>
+                  <li>
+                    <p>Configure the remote controller</p>
+                  </li>
+                  <li>
+                    <p>Configure the autopilot for the Pixhawk</p>
+                  </li>
+                  <li>
+                    <p>Validate that all the features are working (altimeter, GPS, telemetry, etc.)</p>
+                  </li>
+                  <li>
+                    <p>Cable management</p>
+                  </li>
+                  <li>
+                    <p>Design and print a cover for the electronics</p>
+                  </li>
+                  <li>
+                    <p>Incorporate a radio camera for live view</p>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -362,7 +420,7 @@
               </video>
             </div>
             <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="cnc-foam-cutter-v2">
+              <video class="project-image" width="600px" autoplay loop muted alt="cnc-foam-cutter-v2">
                 <source src="vid/cnc-foam-stab-2.mp4" type="video/mp4">
               </video>
             </div>
@@ -372,25 +430,45 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>Since my technical degree and my involvment with the Cargo Plane project, I always had a fascination for aircrafts. I thought it would be really cool to be able to cut foam using a hot wire (nickel-chrome alloy) to make the airfoil of the plane. Since nothing open-sourced existed at the time, I decided to build my own CNC foam-cutting machine.</p>
-                <p>I made a first version (middle video) to try out the electronics for the project. I used an Arduino Mega compatible board called Ramps 1.4 which runs the Marlin firmware v1.1. At the time, I wanted to be able to make a variable airfoil, so I programmed a MATLAB script that would import an airfoil .csv file, and then adjust the scale and rotation of the profile. Finally, the script would compute the g-code of the motors to be able to generate the desired shape.</p>
-                <p>The nichrome wire was heated up using a 36v powersupply and a lot of tweaking had to be made to adjust the speed of the cutting process (there is some sort of equilibrium between the heat dissipation of the wire by contact of the foam, and the feedrate of the wire). Ultimately, the project took too much space and it was disassembled.</p>
+                <p>Since my technical degree and my involvment with the Cargo Plane project, I always had a fascination for aircrafts. I thought it would be really cool to be able to cut foam using a hot wire (nickel-chrome alloy) to make the airfoil
+                  of the plane. Since nothing open-sourced existed at the time, I decided to build my own CNC foam-cutting machine.</p>
+                <p>I made a first version (middle video) to try out the electronics for the project. I used an Arduino Mega compatible board called Ramps 1.4 which runs the Marlin firmware v1.1. At the time, I wanted to be able to make a variable
+                  airfoil, so I programmed a MATLAB script that would import an airfoil .csv file, and then adjust the scale and rotation of the profile. Finally, the script would compute the g-code of the motors to be able to generate the desired
+                  shape.</p>
+                <p>The nichrome wire was heated up using a 36v powersupply and a lot of tweaking had to be made to adjust the speed of the cutting process (there is some sort of equilibrium between the heat dissipation of the wire by contact of the
+                  foam, and the feedrate of the wire). Ultimately, the project took too much space and it was disassembled.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
                 <ul>
-                  <li><p>The working volume is 30cm x 20cm x 150cm</p></li>
-                  <li><p>The motor controller is Ramps 1.4 with Marlin v1.1 firmware</p></li>
-                  <li><p>The hot wire is always under tension and the voltage is adjustable</p></li>
-                  <li><p>A LCD screen displays various informations</p></li>
+                  <li>
+                    <p>The working volume is 30cm x 20cm x 150cm</p>
+                  </li>
+                  <li>
+                    <p>The motor controller is Ramps 1.4 with Marlin v1.1 firmware</p>
+                  </li>
+                  <li>
+                    <p>The hot wire is always under tension and the voltage is adjustable</p>
+                  </li>
+                  <li>
+                    <p>A LCD screen displays various informations</p>
+                  </li>
                 </ul>
 
                 <h4>Lessons Learned</h4>
                 <ul>
-                  <li><p>Gained design experience</p></li>
-                  <li><p>Learned how to use the Ramps control board</p></li>
-                  <li><p>Learned how to configure the Marlin firmware</p></li>
-                  <li><p>Gained programming experience</p></li>
+                  <li>
+                    <p>Gained design experience</p>
+                  </li>
+                  <li>
+                    <p>Learned how to use the Ramps control board</p>
+                  </li>
+                  <li>
+                    <p>Learned how to configure the Marlin firmware</p>
+                  </li>
+                  <li>
+                    <p>Gained programming experience</p>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -398,20 +476,18 @@
         </div>
         <!-- End of 3rd project -->
         <!-- 4th project -->
-        <div class="carousel-item ">
+        <div class="carousel-item active">
           <div class="row">
             <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/cnc-foam-cad.png" alt="cnc-foam-cad">
+              <img class="project-image" src="img/epaper-wall.jpg" alt="epaper-wall">
             </div>
             <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="cnc-foam-cutter">
-                <source src="vid/cnc-foam-stab.mp4" type="video/mp4">
+              <video class="project-image white-bg" width="600px" autoplay muted loop alt="cnc-foam-cutter">
+                <source src="vid/epaper-station.mp4" type="video/mp4">
               </video>
             </div>
             <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="cnc-foam-cutter-v2">
-                <source src="vid/cnc-foam-stab-2.mp4" type="video/mp4">
-              </video>
+              <img class="project-image" src="img/esp8266-epaper.png" alt="epaper-wall">
             </div>
           </div>
           <div class="project-spacing">
@@ -419,17 +495,22 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>Since 2015, I became mo</p>
+                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python and how to program on the Raspberry Pi.</p>
+                <p>I made </p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
                 <ul>
-                  <li><p></p></li>
+                  <li>
+                    <p></p>
+                  </li>
                 </ul>
 
                 <h4>Lessons Learned</h4>
                 <ul>
-                  <li><p></p></li>
+                  <li>
+                    <p></p>
+                  </li>
                 </ul>
               </div>
             </div>
