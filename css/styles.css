@@ -33,6 +33,20 @@ img, video {
   max-height: 100%;
 }
 
+hr {
+  border-style: none !important;
+  border-top: dotted !important;
+  border-color: #3282B8 !important;
+  border-width: 15px !important;
+  width: 15%;
+  position: relative;
+  bottom: -120px;
+}
+
+.hidden {
+  display: none;
+}
+
 .carousel img, .carousel video {
   display: block;
   margin-left: auto;
@@ -130,7 +144,7 @@ a.carousel-control-prev, a.carousel-control-next {
 /* Presentation */
 #presentation {
   padding: 7% 10%;
-  background-color: #3282B8;
+  background-color: #BBE1FA;
   color: #1B262C;
 }
 
@@ -190,8 +204,9 @@ video {
   padding: 0 0 25px;
   text-align: center;
 }
+
 .project-spacing h4 {
- padding: 25px 0 25px;
+  padding: 25px 0 25px;
 }
 
 .project-spacing p {
@@ -215,8 +230,12 @@ video {
 /* Skills */
 #skills {
   padding: 7% 15%;
-  background-color: #3282B8;
+  background-color: #BBE1FA;
   color: #1B262C;
+}
+
+.skills-image {
+  text-align: center;
 }
 
 /* Hobbies */

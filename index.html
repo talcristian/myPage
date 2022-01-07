@@ -37,7 +37,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#skills">Skills</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item hidden">
           <a class="nav-link" href="#hobbies">Hobbies</a>
         </li>
         <li class="nav-item">
@@ -53,8 +53,8 @@
       <div class="col-lg-6">
         <h1>Cristian Stéfan Talos</h1>
         <h2>B.Ing., M.Sc.A., CPI</h2>
-        <p class="p-title">3D Printing enthousiast, systems integration designer and robotics programmer.</p>
-        <p><em>Learning new things is my greatest source of motivation!</em></p>
+        <p class="p-title">3D printing enthousiast, systems integration designer and robotics programmer. Learning new things is my greatest source of motivation!</p>
+        <p>Currently working on a certificate in applied informatics technology (IT) at University of Montréal.</p>
 
         <div class="row title-qualities">
           <div class="feature-box col-md-4">
@@ -116,11 +116,14 @@
       </div>
     </div>
 
+    <hr>
   </section>
+
 
 
   <!-- Presentation -->
   <section id="presentation">
+
     <h1 class="name-spacing">Presentation</h1>
     <div class="container-fluid presentation-subsection">
       <div class="row">
@@ -236,6 +239,7 @@
         </div>
       </div>
     </div>
+    <hr>
   </section>
 
 
@@ -243,17 +247,20 @@
   <!-- Projects collection -->
   <section id="projects">
     <h1 class="name-spacing">Projects</h1>
-
+    <div class="container-fluid">
+      <p>Here are a few of my projects I've done over the past few years!</p>
+    </div>
     <div id="project-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="15000">
       <ol class="carousel-indicators">
         <li data-target="#project-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#project-carousel" data-slide-to="1"></li>
         <li data-target="#project-carousel" data-slide-to="2"></li>
         <li data-target="#project-carousel" data-slide-to="3"></li>
+        <li data-target="#project-carousel" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
         <!-- First project -->
-        <div class="carousel-item">
+        <div class="carousel-item active">
           <div class="row">
             <div class="col-xl-4 col-lg-6">
               <img class="project-image" src="img/3axis-cnc-iso-1.png" alt="3axis-cnc-cad">
@@ -303,16 +310,16 @@
                   </li>
                 </ul>
 
-                <h4>Lessons learned</h4>
+                <h4>What I learned</h4>
                 <ul>
                   <li>
-                    <p>Use Solidworks (part and assembly design)</p>
+                    <p>How to use Solidworks (part and assembly design)</p>
                   </li>
                   <li>
-                    <p>All the electronic wirings</p>
+                    <p>Electronics wiring</p>
                   </li>
                   <li>
-                    <p>Integration of all the electronics</p>
+                    <p>Integration of all the electronics within a dust-free box</p>
                   </li>
                   <li>
                     <p>How the GRBL controller firmware works</p>
@@ -455,7 +462,7 @@
                   </li>
                 </ul>
 
-                <h4>Lessons Learned</h4>
+                <h4>What I Learned</h4>
                 <ul>
                   <li>
                     <p>Gained design experience</p>
@@ -476,13 +483,13 @@
         </div>
         <!-- End of 3rd project -->
         <!-- 4th project -->
-        <div class="carousel-item active">
+        <div class="carousel-item">
           <div class="row">
             <div class="col-xl-4 col-lg-6">
               <img class="project-image" src="img/epaper-wall.jpg" alt="epaper-wall">
             </div>
             <div class="col-xl-4 col-lg-6">
-              <video class="project-image white-bg" width="600px" autoplay muted loop alt="cnc-foam-cutter">
+              <video class="project-image white-bg" width="600px" autoplay muted loop alt="epaper-station">
                 <source src="vid/epaper-station.mp4" type="video/mp4">
               </video>
             </div>
@@ -495,21 +502,51 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python and how to program on the Raspberry Pi.</p>
-                <p>I made </p>
+                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python
+                  and how to program on the Raspberry Pi.</p>
+                <p>I searched for Python libraries to control an e-paper display and then I looked for different ways of getting temperature data. I decided to use the OpenWeather API to get meteo data for Montreal and I use the BM280 temperature
+                  sensor connected to the Raspberry Pi.</p>
+                <p>The Raspberry Pi uses multithreading to run a MQTT server, to get data from other MQTT clients and to display the data on the e-paper. There are multiple ESP8266 microcontrollers in the various rooms of my home that are connected
+                  to their respective BM280 sensors, and they send their temperature via MQTT to the Raspberry Pi.</p>
+                <p>The Raspberry Pi then stores the data from the MQTT clients and from the OpenWeather API inside global variables and the e-paper display thread accesses them to update the display every 15 minutes. Since I use a Raspberry Pi Zero
+                  W, the screen refresh sequence is quite slow, but the whole system is very power efficient.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
                 <ul>
                   <li>
-                    <p></p>
+                    <p>Raspberry Pi Zero W acts as the MQTT host</p>
+                  </li>
+                  <li>
+                    <p>ESP8266 microcontrollers act as MQTT clients</p>
+                  </li>
+                  <li>
+                    <p>BM280 temperature sensors connected to the ESP8266 clients and to the Raspberry Pi, sending data via I2C</p>
+                  </li>
+                  <li>
+                    <p>OpenWeather API used to get meteo data for the region</p>
+                  </li>
+                  <li>
+                    <p>The display updates the info every 15 minutes</p>
                   </li>
                 </ul>
 
-                <h4>Lessons Learned</h4>
+                <h4>What I learned</h4>
                 <ul>
                   <li>
-                    <p></p>
+                    <p>Use multithreading on Python</p>
+                  </li>
+                  <li>
+                    <p>Use API's from the Web</p>
+                  </li>
+                  <li>
+                    <p>How to connect devices together using MQTT</p>
+                  </li>
+                  <li>
+                    <p>Familiarize with the ESP8266 microcontrollers</p>
+                  </li>
+                  <li>
+                    <p>Programming knowledge in C++ and in Python</p>
                   </li>
                 </ul>
               </div>
@@ -517,6 +554,68 @@
           </div>
         </div>
         <!-- End of 4th project -->
+        <!-- 5th project -->
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-xl-12">
+              <video style="border-radius: 10%;" width="1000px" autoplay muted controls loop alt="pen-plotter-cnc">
+                <source src="vid/cnc-pen-plotter.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="project-spacing">
+            <h3>CNC Pen Plotter</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Description</h4>
+                <p>I saw an open-sourced pen plotter CNC on the internet, and I thought it was really cool, so I decided to make one myself. I had to re-design a few parts to improve it functionality and accuracy.</p>
+                <p>The electronics and the controls were not included in the project tutorial, so I had to familiarize myself with the many existing CNC controllers and pick one that would suite the application. Since I am very familiary with
+                  Arduino, I picked a GRBL controller shield for an Arduino Uno.</p>
+                <p>I was able to learn how to use the Marlin firmware with the GRBL control board and how to vectorize images to be able to generate g-code after.</p>
+              </div>
+              <div class="col-md-6">
+                <h4>Specifications</h4>
+                <ul>
+                  <li>
+                    <p>Nema 17 stepper motors used for the three axis</p>
+                  </li>
+                  <li>
+                    <p>GRBL shield with Arduino used to control the motors</p>
+                  </li>
+                  <li>
+                    <p>Core-XY design for the X and Y motions</p>
+                  </li>
+                  <li>
+                    <p>Images vectorized using Inkscape</p>
+                  </li>
+                  <li>
+                    <p>CAM parameters and g-code generation using the Inkscape extension GCodeTools</p>
+                  </li>
+                </ul>
+
+                <h4>What I learned</h4>
+                <ul>
+                  <li>
+                    <p>Design experience</p>
+                  </li>
+                  <li>
+                    <p>Motor controls experience</p>
+                  </li>
+                  <li>
+                    <p>How to vectorize images</p>
+                  </li>
+                  <li>
+                    <p>Experience regarding CNC programming</p>
+                  </li>
+                  <li>
+                    <p>Familiarize with Marlin firmware and GRBL controlers</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of 5th project -->
 
       </div>
       <a class="carousel-control-prev" href="#project-carousel" role="button" data-slide="prev">
@@ -529,20 +628,24 @@
       </a>
     </div>
 
+
+    <hr>
   </section>
 
 
   <!-- Skills -->
   <section id="skills">
     <h1 class="name-spacing">Skills</h1>
-    <p>3d printing, cad design, electronic circuits, systems integration</p>
+    <p style="padding: 0 0 50px; text-align: center;">I am actively learning as much as possible in programming. I wish to learn languages related to IoT and machine learning.</p>
+    <img class="skills-image" src="img/skills.png" alt="skills-graph">
 
+    <hr class="hidden">
   </section>
 
 
 
   <!-- Hobbies -->
-  <section id="hobbies">
+  <section id="hobbies" class="hidden">
     <h1 class="name-spacing">Hobbies</h1>
     <p>3d printing, drone, flight sim VR, learning programming</p>
 
