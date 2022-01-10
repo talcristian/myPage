@@ -133,8 +133,8 @@
         <div class="col-md-5 pres-div">
           <h2>Polytechnique Montréal</h2>
           <p>I have a bachelor's degree in Mechanical Engineering with a specialisation in Mechatronics, and am currently earning my Master of Applied Science.</p>
-          <p>In my first three years at Polytechnique, I was a member of the student group “Oronos.” As the Systems Integration Designer, I helped build a composite rocket for the Spaceport America Cup [year] in New Mexico.</p>
-          <p>In 2019, I was involved in the student group “Elikos,” where we built an autonomous drone with a robotic arm for [name of the competition] in Alma, Chicoutimi. My role was to make the 3 DOF robotic arm that would be mounted on the drone.
+          <p>In my first three years at Polytechnique, I was a member of the student group “Oronos”. As the Systems Integration Designer, I helped build a composite rocket for the Spaceport America Cup 2018 in New Mexico.</p>
+          <p>In 2019, I was involved in the student group “Elikos”, where we built an autonomous drone with a robotic arm for a competition in Alma, Chicoutimi. My role was to make the 3 DOF robotic arm that would be mounted on the drone.
           </p>
           <p>I learned a lot about electronic circuits and with that experience, I started to design PCBs for a few of my school projects.</p>
           <p>My interest in programming and electronics led me to work on my thesis about the development of an active carrier for the braiding of composite textiles. A patent process is underway and a publication is expected in the summer of 2022.
@@ -201,7 +201,7 @@
           <h2>École Nationale d'Aérotechnique</h2>
           <p>I have a Diploma of College Studies in Aerospace Engineering. During this time, I learned a lot about CAD design and manufacturing, as well as circuits and programming with Arduino. This is also when my passion for 3D printing took off.
           </p>
-          <p>In 2014, I was involved in the student group “Cargo Plane,” where we had to build an RC aircraft for a competition in Florida.</p>
+          <p>In 2014, I was involved in the student group “Cargo Plane”, where we had to build an RC aircraft for a competition in Florida.</p>
         </div>
         <div class="col-md-7">
           <div id="ena-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="8000">
@@ -287,7 +287,8 @@
                   We used v-slot aluminum extrusions for the structure and for the linear guide and eccentric nuts on the carriage of all axis to tighten the grip on the extrusions. Aluminum sheet metal was used to make most of the carriage
                   structures, and some more complex parts were 3D printed in PLA.
                 </p>
-                <p>All the electronic components (such as the limit switches) were wired through a drag chain and then plugged in the electronics box. The electronics box has a 24v power supply for the stepper motors and for the CNC shield and it has a 220v 600W transformer for the spindle. An Arduino microcontroller runs the GRBL firmware and connects via USB to a computer to the machining program.</p>
+                <p>All the electronic components (such as the limit switches) were wired through a drag chain and then plugged in the electronics box. The electronics box has a 24v power supply for the stepper motors and for the CNC shield and it has
+                  a 220v 600W transformer for the spindle. An Arduino microcontroller runs the GRBL firmware and connects via USB to a computer to the machining program.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
@@ -361,7 +362,8 @@
                 <p>My participation as a member of Elikos at Polytechnique, and my interest in videos of autonomous drone assembly, sparked my interest in drones and motivated me to build my own.</p>
                 <p>I used an DJI 550 frame on which I designed and 3D printed fixtures for the various components (such as the battery and gimbal fixtures). I soldered all the connectors on the frame and on the power distribution board.</p>
                 <p>The flight controller is a Pixhawk system, which is connected to a 6-channel radio controller that has a range of up to 2km. The remote can also control the orientation of the gimbal mounted on the drone.</p>
-                <p>The Mission Planner software uses real-time telemetry to control the drone. A flight plan can be made with multiple setpoints that use GPS data and the altimeter readings. There are many ways to program the flight controller using Mission Planner, and it is even possible to plan topographic drone surveying. Then, in post-processing, it is possible to stitch the images together to generate a map.</p>
+                <p>The Mission Planner software uses real-time telemetry to control the drone. A flight plan can be made with multiple setpoints that use GPS data and the altimeter readings. There are many ways to program the flight controller using
+                  Mission Planner, and it is even possible to plan topographic drone surveying. Then, in post-processing, it is possible to stitch the images together to generate a map.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
@@ -437,9 +439,13 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>Ever since my involvement with the “Cargo Plane” project, I have had a growing fascination for aircrafts. I thought it would be really cool to be able to cut foam using a hot wire (nickel-chrome alloy) to make the airfoil of the plane. Since nothing open-sourced existed at the time, I decided to build my own CNC foam-cutting machine.</p>
-                <p>I made a first version (middle video) to try out the electronics for the project. I used an Arduino Mega compatible board called Ramps 1.4 which runs the Marlin firmware v1.1. At the time, I wanted to be able to make a variable airfoil, so I programmed a MATLAB script that would import an airfoil .csv file, and then adjust the scale and rotation of the profile. Finally, the script would compute the g-code of the motors to be able to generate the desired shape.</p>
-                <p>The nichrome wire was heated up using a 36v power supply and a lot of tweaking had to be made to adjust the speed of the cutting process (there is some sort of equilibrium between the heat dissipation of the wire by contact of the foam, and the feed rate of the wire). Ultimately, the project took too much space and it was disassembled.</p>
+                <p>Ever since my involvement with the “Cargo Plane” project, I have had a growing fascination for aircrafts. I thought it would be really cool to be able to cut foam using a hot wire (nickel-chrome alloy) to make the airfoil of the
+                  plane. Since nothing open-sourced existed at the time, I decided to build my own CNC foam-cutting machine.</p>
+                <p>I made a first version (middle video) to try out the electronics for the project. I used an Arduino Mega compatible board called Ramps 1.4 which runs the Marlin firmware v1.1. At the time, I wanted to be able to make a variable
+                  airfoil, so I programmed a MATLAB script that would import an airfoil .csv file, and then adjust the scale and rotation of the profile. Finally, the script would compute the g-code of the motors to be able to generate the desired
+                  shape.</p>
+                <p>The nichrome wire was heated up using a 36v power supply and a lot of tweaking had to be made to adjust the speed of the cutting process (there is some sort of equilibrium between the heat dissipation of the wire by contact of the
+                  foam, and the feed rate of the wire). Ultimately, the project took too much space and it was disassembled.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
@@ -498,10 +504,14 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python and how to program on the Raspberry Pi.</p>
-                <p>I searched for Python libraries to control an e-paper display and then I looked for different ways of getting temperature data. I decided to use the OpenWeather API to get meteorological data for Montreal and I used the BM280 temperature sensor connected to the Raspberry Pi.</p>
-                <p>The Raspberry Pi uses multithreading to run a MQTT server, to get data from other MQTT clients and to display the data on the e-paper. There are multiple ESP8266 microcontrollers in the various rooms of my home that are connected to their respective BM280 sensors, and they send their temperature via MQTT to the Raspberry Pi.</p>
-                <p>The Raspberry Pi then stores the data from the MQTT clients and from the OpenWeather API inside global variables and the e-paper display thread accesses them to update the display every 15 minutes. Since I use a Raspberry Pi Zero W, the screen refresh sequence is quite slow, but the whole system is very power efficient.</p>
+                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python
+                  and how to program on the Raspberry Pi.</p>
+                <p>I searched for Python libraries to control an e-paper display and then I looked for different ways of getting temperature data. I decided to use the OpenWeather API to get meteorological data for Montreal and I used the BM280
+                  temperature sensor connected to the Raspberry Pi.</p>
+                <p>The Raspberry Pi uses multithreading to run a MQTT server, to get data from other MQTT clients and to display the data on the e-paper. There are multiple ESP8266 microcontrollers in the various rooms of my home that are connected
+                  to their respective BM280 sensors, and they send their temperature via MQTT to the Raspberry Pi.</p>
+                <p>The Raspberry Pi then stores the data from the MQTT clients and from the OpenWeather API inside global variables and the e-paper display thread accesses them to update the display every 15 minutes. Since I use a Raspberry Pi Zero
+                  W, the screen refresh sequence is quite slow, but the whole system is very power efficient.</p>
               </div>
               <div class="col-md-6">
                 <h4>Specifications</h4>
@@ -560,7 +570,8 @@
             <div class="row">
               <div class="col-md-6">
                 <h4>Description</h4>
-                <p>I was interested in redesigning and improving the functionality and accuracy of an open-sourced pen plotter CNC that I found on the internet. The electronics and the controls were not included in the project tutorial, so I had to familiarize myself with the many existing CNC controllers and pick one that would suite the application. Since I am very familiar with Arduino, I picked a GRBL controller shield for an Arduino Uno.</p>
+                <p>I was interested in redesigning and improving the functionality and accuracy of an open-sourced pen plotter CNC that I found on the internet. The electronics and the controls were not included in the project tutorial, so I had to
+                  familiarize myself with the many existing CNC controllers and pick one that would suite the application. Since I am very familiar with Arduino, I picked a GRBL controller shield for an Arduino Uno.</p>
                 <p>I was able to learn how to use the Marlin firmware with the GRBL control board and how to vectorize images to be able to generate g-code after.</p>
               </div>
               <div class="col-md-6">
