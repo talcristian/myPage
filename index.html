@@ -1,682 +1,708 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Cristian Stefan Talos</title>
-
-  <!-- Styles sheet -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristian Stéfan Talos — Engineer &amp; Maker</title>
+  <meta name="description" content="Portfolio of Cristian Stéfan Talos — Mechanical Engineer, Aviation Simulator Specialist, and Maker">
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Bootstrap styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Nav bar -->
-  <nav class="navbar sticky-top navbar-expand-lg bg-custom">
-    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon navbar-dark"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#title">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#presentation">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item hidden">
-          <a class="nav-link" href="#hobbies">Hobbies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="files/C.S.Talos_CV_eng.pdf">My Resume</a>
-        </li>
-      </ul>
+
+  <!-- Scroll progress indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">C.S. Talos</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home"     class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="#about"    class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#skills"   class="nav-link" data-i18n="nav.skills">Skills</a>
+        <a href="#contact"  class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="files/C.S.Talos_CV_eng.pdf" class="nav-link nav-cv" target="_blank" rel="noopener" data-i18n="nav.resume">Resume</a>
+        <div class="nav-controls">
+          <button class="ctrl-btn" id="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button class="ctrl-btn lang-btn" id="lang-toggle" aria-label="Toggle language">
+            <span class="show-on-en">FR</span>
+            <span class="show-on-fr">EN</span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- Title -->
-  <section id="title">
-    <div class="row">
-      <div class="col-lg-6">
-        <h1>Cristian Stéfan Talos</h1>
-        <h2>M.A.Sc., CPI</h2>
-        <p class="p-title">Systems Integration Designer, Robotics Programmer, and 3D printing enthusiast. Learning new things is my greatest source of motivation!</p>
-        <p>Currently working on a certificate in applied informatics technology (IT) at University of Montréal.</p>
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+  <section id="home">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-container">
 
-        <div class="row title-qualities">
-          <div class="feature-box col-md-4">
-            <img class="icon" src="icons/3d-printer.svg" alt="printer-image">
-            <h5>3D Printing</h5>
-          </div>
-
-          <div class="feature-box col-md-4">
-            <img class="icon" src="icons/code-icon.svg" alt="code-image">
-            <h5>Programming</h5>
-          </div>
-
-          <div class="feature-box col-md-4">
-            <img class="icon" src="icons/robot-arm.svg" alt="robot-image">
-            <h5>Robotics</h5>
-          </div>
+      <div class="hero-text" data-animate="fade-up">
+        <p class="hero-greeting lang-en">Hello, I'm</p>
+        <p class="hero-greeting lang-fr">Bonjour, je suis</p>
+        <h1 class="hero-name">Cristian Stéfan Talos</h1>
+        <p class="hero-creds">M.Sc.A., eng.</p>
+        <p class="hero-tagline lang-en">Mechanical engineer with hands-on experience in aviation flight simulator qualification (A320 &amp; B737). Passionate about aviation, 3D printing, and building things from scratch.</p>
+        <p class="hero-tagline lang-fr">Ingénieur mécanique avec une expérience pratique en qualification de simulateurs de vol (A320 et B737). Passionné d'aviation, d'impression 3D et de fabrication.</p>
+        <div class="hero-pills">
+          <span class="pill">✈ <span class="lang-en">Aviation</span><span class="lang-fr">Aviation</span></span>
+          <span class="pill">⚙ <span class="lang-en">Engineering</span><span class="lang-fr">Ingénierie</span></span>
+          <span class="pill">🖨 <span class="lang-en">3D Printing &amp; Making</span><span class="lang-fr">Impression 3D &amp; Fabrication</span></span>
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary" data-i18n="hero.viewProjects">View Projects</a>
+          <a href="files/C.S.Talos_CV_eng.pdf" class="btn-secondary" target="_blank" rel="noopener" data-i18n="hero.downloadCV">Download CV</a>
         </div>
       </div>
 
-      <div class="col-lg-6">
-        <div id="title-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="5000">
-          <ol class="carousel-indicators">
-            <li data-target="#title-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#title-carousel" data-slide-to="1"></li>
-            <li data-target="#title-carousel" data-slide-to="2"></li>
-            <li data-target="#title-carousel" data-slide-to="3"></li>
-            <li data-target="#title-carousel" data-slide-to="4"></li>
-            <li data-target="#title-carousel" data-slide-to="5"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active container-fluid">
-              <img class="title-image" src="img/me-7.png" alt="profile-image-1">
-            </div>
-            <div class="carousel-item container-fluid">
-              <img class="title-image" src="img/me-2.png" alt="profile-image-2">
-            </div>
-            <div class="carousel-item container-fluid">
-              <img class="title-image" src="img/me-3.png" alt="profile-image-3">
-            </div>
-            <div class="carousel-item container-fluid">
-              <img class="title-image" src="img/me-6.png" alt="profile-image-4">
-            </div>
-            <div class="carousel-item container-fluid">
-              <img class="title-image" src="img/me-5.png" alt="profile-image-5">
-            </div>
-            <div class="carousel-item container-fluid">
-              <img class="title-image" src="img/me-1.png" alt="profile-image-6">
-            </div>
+      <div class="hero-carousel-wrapper" data-animate="fade-left">
+        <div class="hero-carousel" data-carousel data-interval="5000">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="img/me-7.png" alt="Cristian Talos" loading="eager"></div>
+            <div class="carousel-slide"><img src="img/me-2.png" alt="Cristian Talos" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/me-3.png" alt="Cristian Talos" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/me-6.png" alt="Cristian Talos" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/me-5.png" alt="Cristian Talos" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/me-1.png" alt="Cristian Talos" loading="lazy"></div>
           </div>
-          <a class="carousel-control-prev" href="#title-carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#title-carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          <button class="carousel-btn carousel-prev" aria-label="Previous photo">&#8249;</button>
+          <button class="carousel-btn carousel-next" aria-label="Next photo">&#8250;</button>
+          <div class="carousel-dots"></div>
         </div>
       </div>
+
     </div>
-
-    <hr>
+    <a href="#about" class="scroll-hint" aria-label="Scroll to About">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </a>
   </section>
 
+  <!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
+  <section id="about">
+    <div class="section-header" data-animate="fade-up">
+      <h2 class="section-title" data-i18n="about.title">About Me</h2>
+      <p class="section-subtitle lang-en">My educational background and journey as an engineer</p>
+      <p class="section-subtitle lang-fr">Mon parcours académique et mon chemin en tant qu'ingénieur</p>
+    </div>
 
-
-  <!-- Presentation -->
-  <section id="presentation">
-
-    <h1 class="name-spacing">About Me</h1>
-    <div class="container-fluid presentation-subsection">
-      <div class="row">
-        <div class="col-md-5 pres-div">
-          <h2>Polytechnique Montréal</h2>
-          <p>I have a bachelor's degree in Mechanical Engineering with a specialisation in Mechatronics, and am currently earning my Master of Applied Science.</p>
-          <p>In my first three years at Polytechnique, I was a member of the student group “Oronos”. As the Systems Integration Designer, I helped build a composite rocket for the Spaceport America Cup 2018 in New Mexico.</p>
-          <p>In 2019, I was involved in the student group “Elikos”, where we built an autonomous drone with a robotic arm for a competition in Alma, Chicoutimi. My role was to make the 3 DOF robotic arm that would be mounted on the drone.
-          </p>
-          <p>I learned a lot about electronic circuits and with that experience, I started to design PCBs for a few of my school projects.</p>
-          <p>My interest in programming and electronics led me to work on my thesis about the development of an active carrier for the braiding of composite textiles. A patent process is underway and a publication is expected in the summer of 2022.
-          </p>
+    <!-- UdeM -->
+    <div class="about-card udem-card" data-animate="fade-up">
+      <div class="about-card-inner">
+        <div class="school-meta">
+          <span class="school-year lang-en">Graduated December 2024</span>
+          <span class="school-year lang-fr">Diplômé décembre 2024</span>
+          <h3>Université de Montréal</h3>
+          <p class="school-degree lang-en">Certificate in Applied Informatics · 30 credits · GPA 4.02 / 4.30</p>
+          <p class="school-degree lang-fr">Certificat en informatique appliquée · 30 crédits · GPA 4,02 / 4,30</p>
         </div>
-        <div class="col-md-7">
-          <div id="poly-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="8000">
-            <ol class="carousel-indicators">
-              <li data-target="#poly-carousel" data-slide-to="0" class="active"></li>
-              <li data-target="#poly-carousel" data-slide-to="1"></li>
-              <li data-target="#poly-carousel" data-slide-to="2"></li>
-              <li data-target="#poly-carousel" data-slide-to="3"></li>
-              <li data-target="#poly-carousel" data-slide-to="4"></li>
-              <li data-target="#poly-carousel" data-slide-to="5"></li>
-              <li data-target="#poly-carousel" data-slide-to="6"></li>
-              <li data-target="#poly-carousel" data-slide-to="7"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active container-fluid">
-                <img class="pres-image" src="img/pi2-3.png" alt="poly-project-image-3">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/pi2-4.png" alt="poly-project-image-4">
-              </div>
-              <div class="carousel-item container-fluid">
-                <video width="600px" autoplay controls muted alt="poly-project-video">
-                  <source src="vid/PI2_best-test.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/oronos-1.png" alt="oronos-image">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/elikos-1.png" alt="elikos-image">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/elikos-drone.png" alt="elikos-drone">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/elikos-arm.png" alt="elikos-arm">
-              </div>
-              <div class="carousel-item container-fluid">
-                <video width="600px" autoplay controls muted alt="elikos-arm-video">
-                  <source src="vid/3dof-arm.mp4" type="video/mp4">
-                </video>
-              </div>
+        <div class="school-text">
+          <p class="lang-en">Completed a 30-credit certificate with courses covering programming, database management, web development, object-oriented programming, and more — complementing my engineering background with formal IT skills.</p>
+          <p class="lang-fr">Complété un certificat de 30 crédits avec des cours en programmation, gestion de bases de données, développement web, programmation orientée objet, et plus — venant compléter ma formation d'ingénieur par des compétences formelles en informatique.</p>
+        </div>
+        <div class="school-badge">UdeM</div>
+      </div>
+    </div>
+
+    <!-- Polytechnique -->
+    <div class="about-split" data-animate="fade-up">
+      <div class="about-text">
+        <div class="school-meta">
+          <span class="school-year lang-en">B.Eng. 2019 · M.Sc.A. 2022</span>
+          <span class="school-year lang-fr">B.Ing. 2019 · M.Sc.A. 2022</span>
+          <h3>Polytechnique Montréal</h3>
+          <p class="school-degree lang-en">Master of Applied Science · Bachelor in Mechanical Engineering (Mechatronics)</p>
+          <p class="school-degree lang-fr">Maîtrise en sciences appliquées · Baccalauréat en génie mécanique (Mécatronique)</p>
+        </div>
+        <div class="lang-en">
+          <p>My M.Sc.A. thesis focused on the development of an <strong>active spool tensioner for braiding machines</strong>, resulting in <strong>Patent #12258690</strong> and a publication in fall 2025: <em>"Design and characterization of an active spool tensioner for braiding machines."</em></p>
+          <p>During my bachelor's, I was Systems Integration Designer for <strong>Oronos</strong>, building a composite rocket for the Spaceport America Cup 2018 in New Mexico. I also joined <strong>Elikos</strong>, designing a 3 DOF robotic arm for an autonomous drone competition in Chicoutimi.</p>
+          <p>Three-time recipient of the <strong>UPIR scholarship</strong> for research initiation. &nbsp;<em>GPA M.Sc.A.: 3.57 / 4.00 &nbsp;·&nbsp; GPA B.Eng.: 3.14 / 4.00</em></p>
+        </div>
+        <div class="lang-fr">
+          <p>Ma thèse de M.Sc.A. portait sur le développement d'un <strong>tensionneur actif pour machines à tresser</strong>, menant au <strong>brevet #12258690</strong> et à une publication à l'automne 2025 : <em>« Design and characterization of an active spool tensioner for braiding machines. »</em></p>
+          <p>Durant mon baccalauréat, j'étais concepteur en intégration de systèmes pour <strong>Oronos</strong>, construisant une fusée composite pour la Spaceport America Cup 2018 au Nouveau-Mexique. J'ai aussi participé à <strong>Elikos</strong>, concevant un bras robotique 3 DDL pour un drone autonome à Chicoutimi.</p>
+          <p>Triple récipiendaire de la <strong>bourse UPIR</strong> pour l'initiation à la recherche. &nbsp;<em>GPA M.Sc.A. : 3,57 / 4,00 &nbsp;·&nbsp; GPA B.Ing. : 3,14 / 4,00</em></p>
+        </div>
+      </div>
+      <div class="about-media">
+        <div class="about-carousel" data-carousel data-interval="7000">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="img/pi2-3.png" alt="Thesis — active tensioner" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/pi2-4.png" alt="Thesis — active tensioner" loading="lazy"></div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline><source src="vid/PI2_best-test.mp4" type="video/mp4"></video>
             </div>
-            <a class="carousel-control-prev" href="#poly-carousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#poly-carousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-slide"><img src="img/oronos-1.png" alt="Oronos — composite rocket" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/elikos-1.png" alt="Elikos — autonomous drone" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/elikos-drone.png" alt="Elikos drone" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/elikos-arm.png" alt="Robotic arm" loading="lazy"></div>
+            <div class="carousel-slide">
+              <video autoplay muted loop playsinline><source src="vid/3dof-arm.mp4" type="video/mp4"></video>
+            </div>
           </div>
+          <button class="carousel-btn carousel-prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel-btn carousel-next" aria-label="Next">&#8250;</button>
+          <div class="carousel-dots"></div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid presentation-subsection">
-      <div class="row">
-        <div class="col-md-5 pres-div">
-          <h2>École Nationale d'Aérotechnique</h2>
-          <p>I have a Diploma of College Studies in Aerospace Engineering. During this time, I learned a lot about CAD design and manufacturing, as well as circuits and programming with Arduino. This is also when my passion for 3D printing took off.
-          </p>
-          <p>In 2014, I was involved in the student group “Cargo Plane”, where we had to build an RC aircraft for a competition in Florida.</p>
+    <!-- ENA -->
+    <div class="about-split" data-animate="fade-up">
+      <div class="about-text">
+        <div class="school-meta">
+          <span class="school-year">2014</span>
+          <h3>École Nationale d'Aérotechnique</h3>
+          <p class="school-degree lang-en">Diploma of College Studies in Aerospace Engineering (DEC)</p>
+          <p class="school-degree lang-fr">Diplôme d'études collégiales (DEC) en aérotechnique</p>
         </div>
-        <div class="col-md-7">
-          <div id="ena-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="8000">
-            <ol class="carousel-indicators">
-              <li data-target="#ena-carousel" data-slide-to="0" class="active"></li>
-              <li data-target="#ena-carousel" data-slide-to="1"></li>
-              <li data-target="#ena-carousel" data-slide-to="2"></li>
-              <li data-target="#ena-carousel" data-slide-to="3"></li>
-              <li data-target="#ena-carousel" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active container-fluid">
-                <img class="pres-image" src="img/ena-1.png" alt="ena-image-1">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/ena-2.png" alt="ena-image-2">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/avion-cargo-1.png" alt="avioncargo-image-1">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/avion-cargo-2.png" alt="avioncargo-image-2">
-              </div>
-              <div class="carousel-item container-fluid">
-                <img class="pres-image" src="img/avion-cargo-3.png" alt="avioncargo-image-3">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#ena-carousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#ena-carousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+        <div class="lang-en">
+          <p>Studied CAD design, manufacturing processes, and electronics with Arduino — this is when my passion for 3D printing truly took off.</p>
+          <p>In 2014, I was part of the <strong>"Cargo Plane"</strong> student group, where we designed and built an RC aircraft that competed in a competition in Florida. This experience sparked my lifelong interest in aerospace and aviation.</p>
+        </div>
+        <div class="lang-fr">
+          <p>Formation en conception CAO, procédés de fabrication et électronique avec Arduino — c'est là que ma passion pour l'impression 3D a vraiment décollé.</p>
+          <p>En 2014, j'ai participé au groupe étudiant <strong>« Avion-Cargo »</strong>, où nous avons conçu et construit un aéronef radiocommandé pour une compétition en Floride. Cette expérience a allumé mon intérêt durable pour l'aérospatiale et l'aviation.</p>
+        </div>
+      </div>
+      <div class="about-media">
+        <div class="about-carousel" data-carousel data-interval="6000">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="img/ena-1.png" alt="ENA" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/ena-2.png" alt="ENA" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/avion-cargo-1.png" alt="Cargo Plane project" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/avion-cargo-2.png" alt="Cargo Plane project" loading="lazy"></div>
+            <div class="carousel-slide"><img src="img/avion-cargo-3.png" alt="Cargo Plane project" loading="lazy"></div>
           </div>
+          <button class="carousel-btn carousel-prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel-btn carousel-next" aria-label="Next">&#8250;</button>
+          <div class="carousel-dots"></div>
         </div>
       </div>
     </div>
-    <hr>
   </section>
 
-
-
-  <!-- Projects collection -->
+  <!-- ═══════════════════════════════════ PROJECTS ═══════════════════════════════════ -->
   <section id="projects">
-    <h1 class="name-spacing">Projects</h1>
-    <div class="container-fluid">
-      <p>Here are a few of my projects I've done over the past few years!</p>
+    <div class="section-header" data-animate="fade-up">
+      <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+      <p class="section-subtitle lang-en">Personal and academic builds from the past few years</p>
+      <p class="section-subtitle lang-fr">Projets personnels et académiques des dernières années</p>
     </div>
-    <div id="project-carousel" class="carousel slide" data-ride="carousel" data-pause="hover" data-interval="15000">
-      <ol class="carousel-indicators">
-        <li data-target="#project-carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#project-carousel" data-slide-to="1"></li>
-        <li data-target="#project-carousel" data-slide-to="2"></li>
-        <li data-target="#project-carousel" data-slide-to="3"></li>
-        <li data-target="#project-carousel" data-slide-to="4"></li>
-      </ol>
-      <div class="carousel-inner">
-        <!-- First project -->
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/3axis-cnc-iso-1.png" alt="3axis-cnc-cad">
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay loop muted alt="3axis-cnc-video">
-                <source src="vid/3axis-cnc-stab.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/3axis-cnc-electronics-2.png" alt="3axis-cnc-electronics">
-            </div>
-          </div>
-          <div class="project-spacing">
-            <h3>3 Axis CNC Router</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4>Description</h4>
-                <p>The goal of this project was to familiarize myself with the Solidworks CAD software and to build a CNC router that would be useful for any projects requiring the machining of plywood or even aluminum sheets. I also wanted to
-                  acquire more knowledge on electronics for CNC machines.</p>
-                <p>This project was done in collaboration with two other engineering students whose focus was on the CAD. My role was to make the electronics box, the electronics circuit and to program the CNC shield.
-                  We used v-slot aluminum extrusions for the structure and for the linear guide and eccentric nuts on the carriage of all axis to tighten the grip on the extrusions. Aluminum sheet metal was used to make most of the carriage
-                  structures, and some more complex parts were 3D printed in PLA.
-                </p>
-                <p>All the electronic components (such as the limit switches) were wired through a drag chain and then plugged in the electronics box. The electronics box has a 24v power supply for the stepper motors and for the CNC shield and it has
-                  a 220v 600W transformer for the spindle. An Arduino microcontroller runs the GRBL firmware and connects via USB to a computer to the machining program.</p>
-              </div>
-              <div class="col-md-6">
-                <h4>Specifications</h4>
-                <ul>
-                  <li>
-                    <p>600W Spindle (max 15000 RPM)</p>
-                  </li>
-                  <li>
-                    <p>ER11 Collets with HSS End Mill</p>
-                  </li>
-                  <li>
-                    <p>GRBL Controller for the stepper motors (Arduino shield)</p>
-                  </li>
-                  <li>
-                    <p>Working volume: 100cm x 100cm x 20cm</p>
-                  </li>
-                  <li>
-                    <p>Control via USB, using an Universal G-Code Sender Software</p>
-                  </li>
-                  <li>
-                    <p>Emergency Stop Button and other Safety Features</p>
-                  </li>
-                </ul>
+    <div class="projects-grid" id="projects-grid" data-animate="fade-up">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
 
-                <h4>What I learned</h4>
-                <ul>
-                  <li>
-                    <p>How to use Solidworks (part and assembly design)</p>
-                  </li>
-                  <li>
-                    <p>Electronics wiring</p>
-                  </li>
-                  <li>
-                    <p>Integration of all the electronics within a dust-free box</p>
-                  </li>
-                  <li>
-                    <p>How the GRBL controller firmware works</p>
-                  </li>
-                  <li>
-                    <p>Rubber v-wheels are not sturdy enough, and it causes vibrations when machining</p>
-                  </li>
-                  <li>
-                    <p>Cable management and connectors selection (wires tend to take a lot more space than expected)</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of first project -->
-        <!-- 2nd project -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/drone-cad.png" alt="drone-cad">
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="drone-gimbal">
-                <source src="vid/drone-gimbal.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/drone-real.jpg" alt="drone-real">
-            </div>
-          </div>
-          <div class="project-spacing">
-            <h3>Hexacopter with autopilot</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4>Description</h4>
-                <p>My participation as a member of Elikos at Polytechnique, and my interest in videos of autonomous drone assembly, sparked my interest in drones and motivated me to build my own.</p>
-                <p>I used an DJI 550 frame on which I designed and 3D printed fixtures for the various components (such as the battery and gimbal fixtures). I soldered all the connectors on the frame and on the power distribution board.</p>
-                <p>The flight controller is a Pixhawk system, which is connected to a 6-channel radio controller that has a range of up to 2km. The remote can also control the orientation of the gimbal mounted on the drone.</p>
-                <p>The Mission Planner software uses real-time telemetry to control the drone. A flight plan can be made with multiple setpoints that use GPS data and the altimeter readings. There are many ways to program the flight controller using
-                  Mission Planner, and it is even possible to plan topographic drone surveying. Then, in post-processing, it is possible to stitch the images together to generate a map.</p>
-              </div>
-              <div class="col-md-6">
-                <h4>Specifications</h4>
-                <ul>
-                  <li>
-                    <p>Pixhawk autopilot</p>
-                  </li>
-                  <li>
-                    <p>2 Axis Gimbal for a GoPro Camera</p>
-                  </li>
-                  <li>
-                    <p>5000mAh 4 Cells Li-Po battery</p>
-                  </li>
-                  <li>
-                    <p>Telemetry up to 2km</p>
-                  </li>
-                  <li>
-                    <p>High and wide landing gear for stability</p>
-                  </li>
-                  <li>
-                    <p>Mass of 2.5kg (with battery and camera)</p>
-                  </li>
-                </ul>
+  <!-- Hidden project content (both languages) -->
+  <div id="project-data" hidden aria-hidden="true">
 
-                <h4>Next Steps</h4>
-                <ul>
-                  <li>
-                    <p>Get the Transport Canada pilot license</p>
-                  </li>
-                  <li>
-                    <p>Configure the remote controller</p>
-                  </li>
-                  <li>
-                    <p>Configure the autopilot for the Pixhawk</p>
-                  </li>
-                  <li>
-                    <p>Validate that all the features are working (altimeter, GPS, telemetry, etc.)</p>
-                  </li>
-                  <li>
-                    <p>Cable management</p>
-                  </li>
-                  <li>
-                    <p>Design and print a cover for the electronics</p>
-                  </li>
-                  <li>
-                    <p>Incorporate a radio camera for live view</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of 2nd project -->
-        <!-- 3rd project -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/cnc-foam-cad.png" alt="cnc-foam-cad">
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay controls muted alt="cnc-foam-cutter">
-                <source src="vid/cnc-foam-stab.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <video class="project-image" width="600px" autoplay loop muted alt="cnc-foam-cutter-v2">
-                <source src="vid/cnc-foam-stab-2.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="project-spacing">
-            <h3>Hot Wire CNC Foam Cutter</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4>Description</h4>
-                <p>Ever since my involvement with the “Cargo Plane” project, I have had a growing fascination for aircrafts. I thought it would be really cool to be able to cut foam using a hot wire (nickel-chrome alloy) to make the airfoil of the
-                  plane. Since nothing open-sourced existed at the time, I decided to build my own CNC foam-cutting machine.</p>
-                <p>I made a first version (middle video) to try out the electronics for the project. I used an Arduino Mega compatible board called Ramps 1.4 which runs the Marlin firmware v1.1. At the time, I wanted to be able to make a variable
-                  airfoil, so I programmed a MATLAB script that would import an airfoil .csv file, and then adjust the scale and rotation of the profile. Finally, the script would compute the g-code of the motors to be able to generate the desired
-                  shape.</p>
-                <p>The nichrome wire was heated up using a 36v power supply and a lot of tweaking had to be made to adjust the speed of the cutting process (there is some sort of equilibrium between the heat dissipation of the wire by contact of the
-                  foam, and the feed rate of the wire). Ultimately, the project took too much space and it was disassembled.</p>
-              </div>
-              <div class="col-md-6">
-                <h4>Specifications</h4>
-                <ul>
-                  <li>
-                    <p>The working volume is 30cm x 20cm x 150cm</p>
-                  </li>
-                  <li>
-                    <p>The motor controller is Ramps 1.4 with Marlin v1.1 firmware</p>
-                  </li>
-                  <li>
-                    <p>The hot wire is always under tension and the voltage is adjustable</p>
-                  </li>
-                  <li>
-                    <p>A LCD screen displays various informations</p>
-                  </li>
-                </ul>
-
-                <h4>What I Learned</h4>
-                <ul>
-                  <li>
-                    <p>Gained design experience</p>
-                  </li>
-                  <li>
-                    <p>Learned how to use the Ramps control board</p>
-                  </li>
-                  <li>
-                    <p>Learned how to configure the Marlin firmware</p>
-                  </li>
-                  <li>
-                    <p>Gained programming experience</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of 3rd project -->
-        <!-- 4th project -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/epaper-wall.png" alt="epaper-wall">
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <video class="project-image white-bg" width="600px" autoplay muted loop alt="epaper-station">
-                <source src="vid/epaper-station.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <img class="project-image" src="img/esp8266-epaper.png" alt="epaper-wall">
-            </div>
-          </div>
-          <div class="project-spacing">
-            <h3>E-paper Weather Display with ESP8266 and Raspberry Pi</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4>Description</h4>
-                <p>Since 2015, I became more and more familiar with programming microcontrollers from the Arduino family (AVR processors) and I always kept reading things about the micro-computer Raspberry Pi. I decided that I wanted to learn Python
-                  and how to program on the Raspberry Pi.</p>
-                <p>I searched for Python libraries to control an e-paper display and then I looked for different ways of getting temperature data. I decided to use the OpenWeather API to get meteorological data for Montreal and I used the BM280
-                  temperature sensor connected to the Raspberry Pi.</p>
-                <p>The Raspberry Pi uses multithreading to run a MQTT server, to get data from other MQTT clients and to display the data on the e-paper. There are multiple ESP8266 microcontrollers in the various rooms of my home that are connected
-                  to their respective BM280 sensors, and they send their temperature via MQTT to the Raspberry Pi.</p>
-                <p>The Raspberry Pi then stores the data from the MQTT clients and from the OpenWeather API inside global variables and the e-paper display thread accesses them to update the display every 15 minutes. Since I use a Raspberry Pi Zero
-                  W, the screen refresh sequence is quite slow, but the whole system is very power efficient.</p>
-              </div>
-              <div class="col-md-6">
-                <h4>Specifications</h4>
-                <ul>
-                  <li>
-                    <p>Raspberry Pi Zero W acts as the MQTT host</p>
-                  </li>
-                  <li>
-                    <p>ESP8266 microcontrollers act as MQTT clients</p>
-                  </li>
-                  <li>
-                    <p>BM280 temperature sensors connected to the ESP8266 clients and to the Raspberry Pi, sending data via I2C</p>
-                  </li>
-                  <li>
-                    <p>OpenWeather API used to get meteo data for the region</p>
-                  </li>
-                  <li>
-                    <p>The display updates the info every 15 minutes</p>
-                  </li>
-                </ul>
-
-                <h4>What I learned</h4>
-                <ul>
-                  <li>
-                    <p>Use multithreading on Python</p>
-                  </li>
-                  <li>
-                    <p>Use API's from the Web</p>
-                  </li>
-                  <li>
-                    <p>How to connect devices together using MQTT</p>
-                  </li>
-                  <li>
-                    <p>Familiarize with the ESP8266 microcontrollers</p>
-                  </li>
-                  <li>
-                    <p>Programming knowledge in C++ and in Python</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of 4th project -->
-        <!-- 5th project -->
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-xl-12">
-              <video style="border-radius: 10%;" width="1000px" autoplay muted controls loop alt="pen-plotter-cnc">
-                <source src="vid/cnc-pen-plotter.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="project-spacing">
-            <h3>CNC Pen Plotter</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <h4>Description</h4>
-                <p>I was interested in redesigning and improving the functionality and accuracy of an open-sourced pen plotter CNC that I found on the internet. The electronics and the controls were not included in the project tutorial, so I had to
-                  familiarize myself with the many existing CNC controllers and pick one that would suite the application. Since I am very familiar with Arduino, I picked a GRBL controller shield for an Arduino Uno.</p>
-                <p>I was able to learn how to use the Marlin firmware with the GRBL control board and how to vectorize images to be able to generate g-code after.</p>
-              </div>
-              <div class="col-md-6">
-                <h4>Specifications</h4>
-                <ul>
-                  <li>
-                    <p>Nema 17 stepper motors used for the three axis</p>
-                  </li>
-                  <li>
-                    <p>GRBL shield with Arduino used to control the motors</p>
-                  </li>
-                  <li>
-                    <p>Core-XY design for the X and Y motions</p>
-                  </li>
-                  <li>
-                    <p>Images vectorized using Inkscape</p>
-                  </li>
-                  <li>
-                    <p>CAM parameters and g-code generation using the Inkscape extension GCodeTools</p>
-                  </li>
-                </ul>
-
-                <h4>What I learned</h4>
-                <ul>
-                  <li>
-                    <p>Design experience</p>
-                  </li>
-                  <li>
-                    <p>Motor controls experience</p>
-                  </li>
-                  <li>
-                    <p>How to vectorize images</p>
-                  </li>
-                  <li>
-                    <p>Experience regarding CNC programming</p>
-                  </li>
-                  <li>
-                    <p>Familiarize with Marlin firmware and GRBL controlers</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of 5th project -->
-
+    <div id="proj-0"><!-- CNC Router -->
+      <div class="proj-media-items">
+        <img src="img/3axis-cnc-iso-1.png" alt="3-axis CNC router CAD">
+        <video autoplay muted loop playsinline><source src="vid/3axis-cnc-stab.mp4" type="video/mp4"></video>
+        <img src="img/3axis-cnc-electronics-2.png" alt="Electronics box">
       </div>
-      <a class="carousel-control-prev" href="#project-carousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#project-carousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class="proj-body">
+        <div class="lang-en">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>The goal was to learn Solidworks and build a CNC router capable of machining plywood and aluminum. Done in collaboration with two engineering students — my role was the electronics box, circuit design, and CNC shield programming.</p>
+              <p>The structure uses v-slot aluminum extrusions with eccentric nut carriages. Sheet metal forms most carriage structures; complex parts are 3D-printed in PLA. The electronics box houses a 24V power supply for the steppers and a 600W transformer for the spindle. An Arduino running GRBL connects via USB to the G-code sender.</p>
+            </div>
+            <div>
+              <h4>Specifications</h4>
+              <ul>
+                <li>600W Spindle (max 15,000 RPM)</li>
+                <li>ER11 Collets with HSS End Mill</li>
+                <li>GRBL firmware on Arduino CNC Shield</li>
+                <li>Working volume: 100 × 100 × 20 cm</li>
+                <li>Control via Universal G-Code Sender</li>
+                <li>Emergency stop button</li>
+              </ul>
+              <h4>What I Learned</h4>
+              <ul>
+                <li>Solidworks (parts &amp; assembly design)</li>
+                <li>Electronics wiring &amp; connector selection</li>
+                <li>Dust-free electronics enclosure integration</li>
+                <li>GRBL firmware configuration</li>
+                <li>V-wheels cause vibrations — use linear rails next time</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lang-fr">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>L'objectif était d'apprendre Solidworks et de construire une fraiseuse CNC pour usiner du contreplaqué et de l'aluminium. Réalisé en collaboration avec deux autres étudiants — mon rôle : le boîtier électronique, les circuits et la programmation du contrôleur CNC.</p>
+              <p>La structure utilise des profilés aluminium v-slot avec des chariots à écrous excentriques. La tôle forme la plupart des structures de chariots ; les pièces complexes sont imprimées en 3D en PLA. Le boîtier contient une alimentation 24V pour les moteurs pas-à-pas et un transformateur 600W pour la broche. Un Arduino avec GRBL se connecte via USB au logiciel d'envoi de G-code.</p>
+            </div>
+            <div>
+              <h4>Spécifications</h4>
+              <ul>
+                <li>Broche 600W (max 15 000 RPM)</li>
+                <li>Pinces ER11 avec fraises HSS</li>
+                <li>Firmware GRBL sur shield Arduino</li>
+                <li>Volume de travail : 100 × 100 × 20 cm</li>
+                <li>Contrôle via Universal G-Code Sender</li>
+                <li>Bouton d'arrêt d'urgence</li>
+              </ul>
+              <h4>Ce que j'ai appris</h4>
+              <ul>
+                <li>Solidworks (pièces et assemblages)</li>
+                <li>Câblage électronique et choix de connecteurs</li>
+                <li>Intégration dans un boîtier anti-poussière</li>
+                <li>Configuration du firmware GRBL</li>
+                <li>Les roues en V causent des vibrations — utiliser des rails linéaires</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div id="proj-1"><!-- Hexacopter -->
+      <div class="proj-media-items">
+        <img src="img/drone-cad.png" alt="Hexacopter CAD">
+        <video autoplay muted loop playsinline><source src="vid/drone-gimbal.mp4" type="video/mp4"></video>
+        <img src="img/drone-real.jpg" alt="Built hexacopter">
+      </div>
+      <div class="proj-body">
+        <div class="lang-en">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>Motivated by my Elikos experience and fascination with autonomous drones, I built my own hexacopter on a DJI 550 frame. I designed and 3D-printed all custom fixtures (battery mounts, gimbal mounts), soldered all connectors and power distribution, and configured the Pixhawk autopilot.</p>
+              <p>Mission Planner enables real-time telemetry, GPS-based flight plans, and topographic surveying missions. Post-processing allows image stitching to generate maps.</p>
+            </div>
+            <div>
+              <h4>Specifications</h4>
+              <ul>
+                <li>Pixhawk autopilot system</li>
+                <li>2-axis gimbal for GoPro camera</li>
+                <li>5000mAh 4-cell LiPo battery</li>
+                <li>2 km telemetry range</li>
+                <li>2.5 kg total mass (with battery &amp; camera)</li>
+              </ul>
+              <h4>Next Steps</h4>
+              <ul>
+                <li>Configure remote controller &amp; autopilot</li>
+                <li>Validate altimeter, GPS, and telemetry</li>
+                <li>Improve cable management</li>
+                <li>Design 3D-printed electronics cover</li>
+                <li>Add FPV camera for live view</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lang-fr">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>Motivé par mon expérience chez Elikos et ma fascination pour les drones autonomes, j'ai construit mon propre hexacoptère sur un châssis DJI 550. J'ai conçu et imprimé tous les supports personnalisés (batterie, nacelle), soudé tous les connecteurs et la distribution de puissance, et configuré l'autopilote Pixhawk.</p>
+              <p>Mission Planner permet la télémétrie en temps réel, des plans de vol GPS et des missions de relevé topographique. Le post-traitement permet l'assemblage des images pour générer des cartes.</p>
+            </div>
+            <div>
+              <h4>Spécifications</h4>
+              <ul>
+                <li>Système autopilote Pixhawk</li>
+                <li>Nacelle 2 axes pour caméra GoPro</li>
+                <li>Batterie LiPo 4 cellules 5000mAh</li>
+                <li>Portée de télémétrie : 2 km</li>
+                <li>Masse totale : 2,5 kg (batterie et caméra inclus)</li>
+              </ul>
+              <h4>Prochaines étapes</h4>
+              <ul>
+                <li>Configurer la télécommande et l'autopilote</li>
+                <li>Valider altimètre, GPS et télémétrie</li>
+                <li>Améliorer la gestion des câbles</li>
+                <li>Concevoir un couvercle imprimé en 3D</li>
+                <li>Ajouter une caméra FPV</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <hr>
-  </section>
+    <div id="proj-2"><!-- Foam Cutter -->
+      <div class="proj-media-items">
+        <img src="img/cnc-foam-cad.png" alt="CNC foam cutter CAD">
+        <video autoplay muted loop playsinline><source src="vid/cnc-foam-stab.mp4" type="video/mp4"></video>
+        <video autoplay muted loop playsinline><source src="vid/cnc-foam-stab-2.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proj-body">
+        <div class="lang-en">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>Inspired by my aerospace studies, I wanted to cut foam airfoils with a hot nichrome wire. Since nothing open-source existed at the time, I designed and built my own CNC foam cutter.</p>
+              <p>I used an Arduino Mega with a Ramps 1.4 board running Marlin v1.1 firmware, and wrote a MATLAB script that imports airfoil CSV files, scales and rotates the profile, then generates G-code for the motors. The nichrome wire is heated at 36V — careful balance between heat and feed rate is required for clean cuts.</p>
+            </div>
+            <div>
+              <h4>Specifications</h4>
+              <ul>
+                <li>Working volume: 30 × 20 × 150 cm</li>
+                <li>Ramps 1.4 + Marlin v1.1 firmware</li>
+                <li>36V adjustable wire heating</li>
+                <li>LCD screen for status display</li>
+              </ul>
+              <h4>What I Learned</h4>
+              <ul>
+                <li>Mechanical design for CNC machines</li>
+                <li>Ramps 1.4 control board setup</li>
+                <li>Marlin firmware configuration</li>
+                <li>MATLAB G-code generation from CSV airfoil data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lang-fr">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>Inspiré par mes études en aérotechnique, je voulais découper des profils d'aile en mousse avec un fil chaud en nichrome. N'existant rien en open-source à l'époque, j'ai conçu et construit ma propre machine.</p>
+              <p>J'ai utilisé un Arduino Mega avec une carte Ramps 1.4 sous Marlin v1.1, et j'ai écrit un script MATLAB qui importe des fichiers CSV de profils d'aile, les met à l'échelle, les fait pivoter, puis génère le G-code pour les moteurs. Le fil nichrome est chauffé à 36V — un équilibre précis entre chaleur et vitesse d'avance est nécessaire.</p>
+            </div>
+            <div>
+              <h4>Spécifications</h4>
+              <ul>
+                <li>Volume de travail : 30 × 20 × 150 cm</li>
+                <li>Ramps 1.4 + firmware Marlin v1.1</li>
+                <li>Chauffage du fil ajustable à 36V</li>
+                <li>Écran LCD pour afficher l'état</li>
+              </ul>
+              <h4>Ce que j'ai appris</h4>
+              <ul>
+                <li>Conception mécanique pour machines CNC</li>
+                <li>Configuration de la carte Ramps 1.4</li>
+                <li>Configuration du firmware Marlin</li>
+                <li>Génération de G-code MATLAB depuis des profils CSV</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div id="proj-3"><!-- E-paper Display -->
+      <div class="proj-media-items">
+        <img src="img/epaper-wall.png" alt="E-paper display on wall">
+        <video autoplay muted loop playsinline><source src="vid/epaper-station.mp4" type="video/mp4"></video>
+        <img src="img/esp8266-epaper.png" alt="ESP8266 e-paper module">
+      </div>
+      <div class="proj-body">
+        <div class="lang-en">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>To learn Python and the Raspberry Pi, I built a networked weather display. A Raspberry Pi Zero W runs a MQTT broker, pulls data from the OpenWeather API, and updates an e-paper display every 15 minutes. Multiple ESP8266 microcontrollers in different rooms act as MQTT clients, each sending temperature and humidity data from a BM280 sensor.</p>
+              <p>The Raspberry Pi Zero W uses Python multithreading to concurrently manage the MQTT server, data collection, and display updates.</p>
+            </div>
+            <div>
+              <h4>Specifications</h4>
+              <ul>
+                <li>Raspberry Pi Zero W as MQTT host</li>
+                <li>ESP8266 microcontrollers as MQTT clients</li>
+                <li>BM280 sensors via I2C</li>
+                <li>OpenWeather API for regional weather data</li>
+                <li>15-minute display refresh cycle</li>
+              </ul>
+              <h4>What I Learned</h4>
+              <ul>
+                <li>Python multithreading</li>
+                <li>REST API integration</li>
+                <li>MQTT protocol &amp; IoT networking</li>
+                <li>ESP8266 ecosystem (C++)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lang-fr">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>Pour apprendre Python et le Raspberry Pi, j'ai construit un affichage météo connecté. Un Raspberry Pi Zero W héberge un broker MQTT, récupère les données de l'API OpenWeather, et met à jour un écran e-paper toutes les 15 minutes. Plusieurs ESP8266 dans différentes pièces agissent comme clients MQTT, envoyant température et humidité depuis des capteurs BM280.</p>
+              <p>Le RPi Zero W utilise le multithreading Python pour gérer simultanément le serveur MQTT, la collecte de données et la mise à jour de l'affichage.</p>
+            </div>
+            <div>
+              <h4>Spécifications</h4>
+              <ul>
+                <li>Raspberry Pi Zero W comme hôte MQTT</li>
+                <li>ESP8266 comme clients MQTT</li>
+                <li>Capteurs BM280 en I2C</li>
+                <li>API OpenWeather pour les données météo</li>
+                <li>Rafraîchissement de l'écran toutes les 15 minutes</li>
+              </ul>
+              <h4>Ce que j'ai appris</h4>
+              <ul>
+                <li>Multithreading Python</li>
+                <li>Intégration d'API REST</li>
+                <li>Protocole MQTT et réseautage IoT</li>
+                <li>Écosystème ESP8266 (C++)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Skills -->
+    <div id="proj-4"><!-- Pen Plotter -->
+      <div class="proj-media-items">
+        <video autoplay muted loop playsinline><source src="vid/cnc-pen-plotter.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proj-body">
+        <div class="lang-en">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>I redesigned and improved an open-source pen plotter CNC found online. The original project included no electronics, so I selected a GRBL shield for Arduino Uno as the controller. The Core-XY motion system uses Nema 17 steppers for X and Y, and a servo for pen lift (Z).</p>
+              <p>Images are vectorized in Inkscape and converted to G-code using the GCodeTools extension, then sent to the machine.</p>
+            </div>
+            <div>
+              <h4>Specifications</h4>
+              <ul>
+                <li>Nema 17 stepper motors (X, Y, Z)</li>
+                <li>GRBL shield with Arduino Uno</li>
+                <li>Core-XY kinematics</li>
+                <li>Image vectorization with Inkscape + GCodeTools</li>
+              </ul>
+              <h4>What I Learned</h4>
+              <ul>
+                <li>Iterative mechanical design</li>
+                <li>Motor control fundamentals</li>
+                <li>Image vectorization workflow</li>
+                <li>CNC G-code programming</li>
+                <li>GRBL controller configuration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lang-fr">
+          <div class="proj-cols">
+            <div>
+              <h4>Description</h4>
+              <p>J'ai repensé et amélioré un traceur à stylo CNC open-source trouvé en ligne. Le projet original n'incluait pas d'électronique, j'ai donc choisi un shield GRBL pour Arduino Uno. Le système de mouvement Core-XY utilise des moteurs pas-à-pas Nema 17 pour X et Y, et un servo pour le lever du stylo (Z).</p>
+              <p>Les images sont vectorisées dans Inkscape et converties en G-code via l'extension GCodeTools, puis envoyées à la machine.</p>
+            </div>
+            <div>
+              <h4>Spécifications</h4>
+              <ul>
+                <li>Moteurs pas-à-pas Nema 17 (X, Y, Z)</li>
+                <li>Shield GRBL avec Arduino Uno</li>
+                <li>Cinématique Core-XY</li>
+                <li>Vectorisation avec Inkscape + GCodeTools</li>
+              </ul>
+              <h4>Ce que j'ai appris</h4>
+              <ul>
+                <li>Conception mécanique itérative</li>
+                <li>Bases du contrôle de moteurs</li>
+                <li>Flux de travail de vectorisation d'images</li>
+                <li>Programmation G-code CNC</li>
+                <li>Configuration du contrôleur GRBL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /project-data -->
+
+  <!-- Project Modal -->
+  <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details" hidden>
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-inner">
+        <div class="modal-media" id="modal-media"></div>
+        <div class="modal-content">
+          <h2 id="modal-title"></h2>
+          <div id="modal-tags" class="modal-tags"></div>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ SKILLS ═══════════════════════════════════ -->
   <section id="skills">
-    <h1 class="name-spacing">Skills</h1>
-    <p style="padding: 0 0 50px; text-align: center;">I am actively learning as much as possible in programming. I wish to learn languages related to IoT and machine learning.</p>
-    <img class="skills-image" src="img/skills.png" alt="skills-graph">
+    <div class="section-header" data-animate="fade-up">
+      <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+      <p class="section-subtitle lang-en">A snapshot of my technical and professional skillset</p>
+      <p class="section-subtitle lang-fr">Un aperçu de mes compétences techniques et professionnelles</p>
+    </div>
 
-    <hr class="hidden">
+    <div class="skills-grid" id="skills-grid">
+
+      <div class="skill-category" data-animate="fade-up">
+        <h3 class="skill-cat-title" data-i18n="skills.professional">Professional</h3>
+        <div class="skill-list">
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Cross-cultural stakeholder management</span><span class="lang-fr">Gestion multiculturelle des parties prenantes</span></div>
+          </div>
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Customer-facing technical leadership</span><span class="lang-fr">Leadership technique face aux clients</span></div>
+          </div>
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Autonomous decision-making</span><span class="lang-fr">Prise de décision autonome</span></div>
+          </div>
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Technical documentation &amp; research</span><span class="lang-fr">Documentation technique et recherche</span></div>
+          </div>
+          <div class="skill-item" data-level="4">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">AI-assisted research &amp; problem-solving</span><span class="lang-fr">Recherche assistée par IA et résolution de problèmes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category" data-animate="fade-up">
+        <h3 class="skill-cat-title" data-i18n="skills.mechanical">Mechanical Design</h3>
+        <div class="skill-list">
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">CATIA (advanced)</span><span class="lang-fr">CATIA (avancé)</span></div>
+          </div>
+          <div class="skill-item" data-level="5">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">3D printing &amp; rapid prototyping</span><span class="lang-fr">Impression 3D et prototypage rapide</span></div>
+          </div>
+          <div class="skill-item" data-level="4">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Systems integration</span><span class="lang-fr">Intégration de systèmes</span></div>
+          </div>
+          <div class="skill-item" data-level="3">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Machining &amp; manufacturing</span><span class="lang-fr">Usinage et fabrication</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category" data-animate="fade-up">
+        <h3 class="skill-cat-title" data-i18n="skills.electrical">Electrical Design</h3>
+        <div class="skill-list">
+          <div class="skill-item" data-level="3">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Electrical schematics</span><span class="lang-fr">Schémas électriques</span></div>
+          </div>
+          <div class="skill-item" data-level="2">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">Circuit design (low-power)</span><span class="lang-fr">Conception de circuits (faible puissance)</span></div>
+          </div>
+          <div class="skill-item" data-level="1">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">PCB design (Autodesk Eagle)</span><span class="lang-fr">Conception de PCB (Autodesk Eagle)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category" data-animate="fade-up">
+        <h3 class="skill-cat-title" data-i18n="skills.programming">Programming</h3>
+        <div class="skill-list">
+          <div class="skill-item" data-level="3">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span>Python (NumPy, SciPy, DAQ, DSP)</span></div>
+          </div>
+          <div class="skill-item" data-level="3">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">OOP concepts (MVC, encapsulation)</span><span class="lang-fr">Concepts POO (MVC, encapsulation)</span></div>
+          </div>
+          <div class="skill-item" data-level="2">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span>Web stack (HTML / CSS / JS / PHP / MySQL)</span></div>
+          </div>
+          <div class="skill-item" data-level="2">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">SQL Server / database design</span><span class="lang-fr">SQL Server / conception de bases de données</span></div>
+          </div>
+          <div class="skill-item" data-level="2">
+            <div class="skill-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="skill-name"><span class="lang-en">C / C++ (OOP, multithreading)</span><span class="lang-fr">C / C++ (POO, multithreading)</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="hidden">
-    <h1 class="name-spacing">Hobbies</h1>
-    <p>3d printing, drone, flight sim VR, learning programming</p>
-
-  </section>
-
-
-
-  <!-- Contact -->
+  <!-- ═══════════════════════════════════ CONTACT ═══════════════════════════════════ -->
   <section id="contact">
-    <h1 class="name-spacing">Contact</h1>
-    <h3 class="contact-item">Email: <a class="links" href="mailto:cristian.talos.1995@gmail.com">cristian.talos.1995@gmail.com</a></h3>
-    <h3 class="contact-item">Linkedin: <a class="links" href="https://www.linkedin.com/in/cristian-stefan-talos-99a24790">https://www.linkedin.com/in/cristian-stefan-talos-99a24790</a></h3>
-    <h3 class="contact-item">Phone: <a class="links" href="">(514) 742-4432</a></h3>
-
+    <div class="section-header" data-animate="fade-up">
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <p class="section-subtitle lang-en">Feel free to reach out — I'm always happy to connect!</p>
+      <p class="section-subtitle lang-fr">N'hésitez pas à me contacter — je suis toujours ravi d'échanger !</p>
+    </div>
+    <div class="contact-grid" data-animate="fade-up">
+      <a href="mailto:cristian.talos.1995@gmail.com" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label" data-i18n="contact.email">Email</span>
+          <span class="contact-value">cristian.talos.1995@gmail.com</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/c-s-talos" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">c-s-talos</span>
+        </div>
+      </a>
+      <a href="tel:+15147424432" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label" data-i18n="contact.phone">Phone</span>
+          <span class="contact-value">(514) 742-4432</span>
+        </div>
+      </a>
+    </div>
   </section>
-
-
 
   <!-- Footer -->
   <footer id="footer">
-    <p style="text-align: center;">Cristian Stefan Talos</p>
-    <p style="text-align: center;">© Copyright 2022</p>
+    <p>Cristian Stéfan Talos</p>
+    <p>© <span id="footer-year">2026</span> &nbsp;·&nbsp; <span class="lang-en">All rights reserved</span><span class="lang-fr">Tous droits réservés</span></p>
   </footer>
 
-  <!-- Bootstrap script -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-  <!-- Icons script -->
-  <script src="https://kit.fontawesome.com/2055ccda69.js" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
